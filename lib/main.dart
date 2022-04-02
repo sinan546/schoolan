@@ -1,22 +1,26 @@
 import 'package:flutter/material.dart';
-import 'homepage.dart';
+import 'parentPages/parentHomePage.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        dividerTheme: const DividerThemeData(
+          space: 50,
+          thickness: 1.5,
+          color: Colors.black,
+        ),
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(),
+      home: const SafeArea(child: ParentHomePage()),
     );
   }
 }
